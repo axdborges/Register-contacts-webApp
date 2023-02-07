@@ -11,9 +11,9 @@ const RoutesMain = () => {
     return (
         <Routes>
             <Route path="/register" element={<Register/>}/>
-            <Route path="/login" element={<Login/>} />
+            <Route path="/session" element={<Login/>} />
             <Route path="/contacts" element={<Dashboard/>}/>
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="*" element={<Navigate to="/session" />} />
         </Routes>
     );
 };
