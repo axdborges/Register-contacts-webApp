@@ -6,14 +6,14 @@ import { Dashboard } from "../components/Dashboard";
 
 const RoutesMain = () => {
 
-    // const token = localStorage.getItem("@token");
-
+    const token = localStorage.getItem("@token");
+    
     return (
         <Routes>
             <Route path="/register" element={<Register/>}/>
-            <Route path="/session" element={<Login/>} />
-            <Route path="/contacts" element={<Dashboard/>}/>
-            <Route path="*" element={<Navigate to="/session" />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/contacts" element={ !!token ? <Dashboard/> : <Navigate to="/login" />}/>
+            <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
     );
 };

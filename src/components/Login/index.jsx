@@ -26,7 +26,6 @@ export const Login = () => {
   const submitFunction = (data) => {
     api.post('/login' , data)
     .then((response) => {
-    console.log(response.data)
     localStorage.clear();
     localStorage.setItem("@token", response.data.token) 
     setUserId(response.data.user.id)

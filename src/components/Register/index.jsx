@@ -1,8 +1,49 @@
+import { useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
+import api from "../../services/api"
 
 export const Register = () => {
+
+  const navigate = useNavigate();
+
+  const schema = yup.object().shape({
+    name: yup.string().required("Nome completo obrigatório"),
+    telefone: yup.number().required("Telefone obrigatório"),
+    email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
+    password: yup.string().required("Senha obrigatória"),
+    isAdm: yup.bool().default(false)
+  });
+
+  const { register, handleSubmit, formState: {errors}, } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const submitFunction = (data) => {
+    api.post('/users' , data)
+    .then((response) => {
+    console.log(response.data)
+    localStorage.clear();
+    alert("Usuário cadastrado com sucesso")
+    
+    navigate(`/login`)
+    
+    })
+    .catch((err) => {
+        alert('Não foi possivel fazer cadastro')
+        localStorage.clear()
+        console.log(err)
+    })
+    
+}
+
+
+
+
     return (
-        <form action="#" method="POST">
+        <form action="#" onSubmit={handleSubmit(submitFunction)}>
               <div className="overflow-hidden shadow sm:rounded-md">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
@@ -16,6 +57,7 @@ export const Register = () => {
                         id="complete-name"
                         autoComplete="given-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        {...register("name")}
                       />
                     </div>
 
@@ -30,6 +72,7 @@ export const Register = () => {
                         maxLength="11"
                         autoComplete="phonenumber"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        {...register("telefone")}
                       />
                     </div>
 
@@ -43,8 +86,24 @@ export const Register = () => {
                         id="email-address"
                         autoComplete="email"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        {...register("email")}
                       />
                     </div>
+
+                    <div className="col-span-6 sm:col-span-4">
+                      <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                        Senha
+                      </label>
+                      <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        autoComplete="password"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        {...register("password")}
+                      />
+                    </div>
+
 
                   </div>
                 </div>
