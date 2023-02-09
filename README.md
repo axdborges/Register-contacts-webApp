@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Register contacts React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto tem como objetivo criar e ver contatos relacionados ao usuário que estiver logado.
 
-## Available Scripts
+## Tecnologias utilizadas: 
 
-In the project directory, you can run:
++ React.js
++ Node.js
++ Tailwind CSS
++ React Router Dom
++ React Hook Form
++ Yup
++ React Icons
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalando Dependências: 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Antes de rodar a aplicação, instale as dependências: 
 
-### `yarn test`
+~~~javascript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+yarn install 
 
-### `yarn build`
+~~~
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Inicie o servidor Back-end: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Atenção! 
+Esta aplicação só irá rodar perfeitamente se o back end estiver rodando tanto o banco de dados quanto a API (em container Docker ou pelo comando `yarn dev`)
+<br> 
+Antes de prosseguir com a aplicação front end, siga os passos do **README** da aplicação back end e esteja certo de que o servidor esteja rodando. 
+<br> 
+Você pode fazer o clone do projeto back end e seguir suas instruções para rodar o servidor por este link: https://github.com/axdborges/Register-Contacts-API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `yarn eject`
+## Rodando a aplicação:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Neste repositório rode o seguinte comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+~~~javascript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+yarn start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+~~~
 
-## Learn More
+Roda o projeto no modo desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para vê-lo no seu Browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+## Funções da aplicação: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Por enquanto nesta aplicação front-end você pode: 
++ Fazer cadastro de usuário 
++ Fazer Login 
++ Criar contatos 
++ Renderizar contatos já salvos 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
