@@ -12,6 +12,17 @@ Este projeto tem como objetivo criar e ver contatos relacionados ao usuário que
 + Yup
 + React Icons
 
+<br> 
+
+## Funções da aplicação: 
+
+Por enquanto nesta aplicação front-end você pode: 
++ Fazer cadastro de usuário 
++ Fazer Login 
++ Criar contatos 
++ Renderizar contatos já salvos 
+
+<br> 
 
 ## Instalando Dependências: 
 
@@ -46,17 +57,6 @@ yarn start
 
 Roda o projeto no modo desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para vê-lo no seu Browser.
-
-
-<br>
-
-## Funções da aplicação: 
-
-Por enquanto nesta aplicação front-end você pode: 
-+ Fazer cadastro de usuário 
-+ Fazer Login 
-+ Criar contatos 
-+ Renderizar contatos já salvos 
 
 
 
