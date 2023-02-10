@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 import api from "../../services/api"
 
-export const Login = () => {
+export const Login = ({token, setToken}) => {
 
   const [ userId, setUserId ] = useState("");
   const [ user, setUser ] = useState(null);
@@ -32,7 +32,7 @@ export const Login = () => {
     setUser(response.data.user)
     localStorage.setItem("@userData", JSON.stringify(response.data.user))
     localStorage.setItem("@userId", response.data.user.id)
-    
+    setToken(response.data.token)
     navigate(`/contacts`)
     
     })
